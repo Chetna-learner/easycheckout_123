@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCheckout</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- QR Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar Navigation (Mainly for Admin, but adapted per view) -->
+        <nav id="sidebar" class="sidebar">
+            <div class="brand">
+                <i class="ph-fill ph-shopping-cart-simple"></i>
+                <h2>EasyCheckout</h2>
+            </div>
+            <ul id="nav-links" class="nav-links">
+                <!-- Injected via JS -->
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="icon-btn mobile-only">
+                    <i class="ph ph-list"></i>
+                </button>
+                <div class="topbar-title">
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn toggle-role" id="role-toggle" title="Switch User Role">
+                        <i class="ph ph-users"></i>
+                    </button>
+                    <div id="cart-icon-container" class="cart-icon hidden">
+                        <button class="icon-btn" onclick="app.navigate('cart')">
+                            <i class="ph ph-shopping-bag"></i>
+                            <span id="cart-badge" class="badge">0</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div id="view-container" class="view-container">
+                <!-- Views injected here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
